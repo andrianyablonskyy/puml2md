@@ -1,7 +1,7 @@
-# puml-for-markdown
+# puml2md
 
 ## Simple CLI Usage
-Just run `puml-for-markdown` in any directory where you have markdown files and it will render links to PlantUML files
+Just run `puml2md` in any directory where you have markdown files and it will render links to PlantUML files
 in markdown comments. The best part about this is that it requires no build files, you don't even need to store 
 puml images in your repo. Also the embedded diagrams can link to other diagrams. [PlantUML](https://plantuml.com) files 
 allow you to create diagrams that are defined using a simple and intuitive language. By default the entire directory 
@@ -20,7 +20,7 @@ You can easily add an embedded diagram to your markdown. Simply add a link to th
 
 Here's the result. **Try clicking on the yellow blocks.**
 
-[![Diagram Image Link](https://tinyurl.com/y847en68)](https://tinyurl.com/y847en68)<!--![Diagram Image Link](./puml/level_1_system_view.puml)-->
+<img alt="Diagram Image Link" src="./dist_puml/puml/level_1_system_view.svg" /><!--![Diagram Image Link](./puml/level_1_system_view.puml)-->
 
 ### Link Only
 To render a link to a puml diagram, do the same thing but exclude the `!`
@@ -30,7 +30,7 @@ To render a link to a puml diagram, do the same thing but exclude the `!`
 
 which renders into
 
-[Click to Open Interactive Diagram](https://tinyurl.com/y847en68)<!--[Click to Open Interactive Diagram](./puml/level_1_system_view.puml)-->
+[Click to Open Interactive Diagram](Error)<!--[Click to Open Interactive Diagram](./puml/level_1_system_view.puml)-->
 
 ## Goal
 The goal is to make PlantUML diagrams easily accessible from markdown, specifically GitHub flavored.
@@ -76,7 +76,7 @@ If you want to update the link text or switch it between image and link, just up
 don't need to delete the rendered image or link.
 
 ### Installation
-`npm i -g puml-for-markdown`
+`npm i -g puml2md`
 
 ### Advanced Usage
 Here are some other features supported
@@ -93,6 +93,7 @@ An application to add interactive PUML diagrams to your github markdown files. I
 
 Options:
   -s, --puml-server-url <url>      This is the base URL used to render diagrams. Defaults to the public plantuml server. (default: "https://www.plantuml.com/plantuml")
+  -e, --embed                      Embed the SVG diagram directly in the markdown file. In the case of this option specified and no puml server url specified, the CLI will use the local puml server to render the diagrams (http://localhost:8080).
   -x, --root-directory <path>      The path to your project (default: CWD)
   -r, --hot-reload                 Rerun markdown generator every `interval` seconds, determined by interval option
   -v, --interval-seconds <number>  If --hot-reload is set, how often should it reload (default: 2)
@@ -149,28 +150,29 @@ though.
 * [C4-Puml](https://github.com/plantuml-stdlib/C4-PlantUML): A collection of PlantUML diagrams for use in C4, you'll see me using this in my examples
 
 ### Known Issues
-* Seems to be breaking on Windows, see [here](https://github.com/danielyaa5/puml-for-markdown/issues/6). I don't have a
-Windows machine to test on so help here would be appreciated.
+> **Note**: This work is based on other project. So, existing issues might be inherited from the original project.
+
+* Seems to be breaking on Windows, see [here](https://github.com/danielyaa5/puml-for-markdown/issues/6). I don't have a Windows machine to test on so help here would be appreciated.
 
 ### More Examples
-[![ERD](https://tinyurl.com/ya6qvr7r)](https://tinyurl.com/ya6qvr7r)<!--![ERD](./puml/level_4_erd.puml)-->
+<img alt="ERD" src="./dist_puml/puml/level_4_erd.svg" /><!--![ERD](./puml/level_4_erd.puml)-->
 
 
 
-[![Container View](https://tinyurl.com/yblre3m4)](https://tinyurl.com/yblre3m4)<!--![Container View](./puml/level_2_container_view.puml)-->
+<img alt="Container View" src="./dist_puml/puml/level_2_container_view.svg" /><!--![Container View](./puml/level_2_container_view.puml)-->
 
 
 
-[![Component View - Label Retrieval Job](https://tinyurl.com/y8egw3wt)](https://tinyurl.com/y8egw3wt)<!--![Component View - Label Retrieval Job](./puml/level_3_component_view_label_retrieval_job.puml)-->
+<img alt="Component View - Label Retrieval Job" src="./dist_puml/puml/level_3_component_view_label_retrieval_job.svg" /><!--![Component View - Label Retrieval Job](./puml/level_3_component_view_label_retrieval_job.puml)-->
 
 
 
-[![Component View - Pipeline Component](https://tinyurl.com/y9j7twkz)](https://tinyurl.com/y9j7twkz)<!--![Component View - Pipeline Component](./puml/level_3_component_view_pipeline.puml)-->
+<img alt="Component View - Pipeline Component" src="./dist_puml/puml/level_3_component_view_pipeline.svg" /><!--![Component View - Pipeline Component](./puml/level_3_component_view_pipeline.puml)-->
 
 
 
-[![Activity Diagram - Sampler A](https://tinyurl.com/ybp8ju9x)](https://tinyurl.com/ybp8ju9x)<!--![Activity Diagram - Sampler A](./puml/level_4_activity_diagram_sampler_a.puml)-->
+<img alt="Activity Diagram - Sampler A" src="./dist_puml/puml/level_4_activity_diagram_sampler_a.svg" /><!--![Activity Diagram - Sampler A](./puml/level_4_activity_diagram_sampler_a.puml)-->
 
 
 
-[![Activity Diagram - Sampler B](https://tinyurl.com/ya3cqxkv)](https://tinyurl.com/ya3cqxkv)<!--![Activity Diagram - Sampler B](./puml/level_4_activity_diagram_sampler_b.puml)-->
+<img alt="Activity Diagram - Sampler B" src="./dist_puml/puml/level_4_activity_diagram_sampler_b.svg" /><!--![Activity Diagram - Sampler B](./puml/level_4_activity_diagram_sampler_b.puml)-->

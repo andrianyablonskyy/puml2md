@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) [2022] [Daniel Yakobian]
+Copyright (c) [2022] [Andrian Yablonskyy]
+Work is based on Daniel Yakobian https://github.com/danielyaa5/puml-for-markdown
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

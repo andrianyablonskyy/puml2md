@@ -16,13 +16,17 @@ new Command()
   .description('An application to add interactive PUML diagrams to your github markdown files. If running with default arguments, run in project root directory.')
   .option(
     '-s, --puml-server-url <url>',
-    'This is the base URL used to render diagrams. Defaults to the public plantuml server.',
-    'https://www.plantuml.com/plantuml',
+    'This is the base URL used to render diagrams. Defaults to the public plantuml server.'
   )
   .addOption(new Option(
       '-x, --root-directory <path>',
       'The path to your project'
     ).default(process.cwd(), 'CWD')
+  )
+  .option(
+    '-e, --embed',
+    'Embed the puml diagrams in the markdown files, instead of linking to them',
+    false
   )
   .option(
     '-r, --hot-reload',
@@ -73,6 +77,7 @@ new Command()
   .action(opts => {
       const useDefaultGitignorePath = !opts.gitignorePath
 
+      opts.embed = opts.embed || false
       opts.distDirectory = opts.distDirectory || path.resolve(opts.rootDirectory, 'dist_puml')
       opts.gitignorePath = opts.gitignorePath || path.resolve(opts.rootDirectory, '.gitignore')
       opts.markdownDirectory = opts.markdownDirectory || opts.rootDirectory
@@ -85,6 +90,16 @@ new Command()
       if (useDefaultGitignorePath && !fs.existsSync(opts.gitignorePath)) {
           opts.respectGitignore = false
       }
+
+      if(opts.embed){
+          opts.pumlServerUrl = opts.pumlServerUrl || 'http://localhost:8080' // If embedding, use a local server
+          opts.imageFormats = ['svg'] // If embedding, only use svg
+          opts.outputImages = true
+      } else{
+          opts.pumlServerUrl = opts.pumlServerUrl || 'https://www.plantuml.com/plantuml'
+      }
+
+
 
       return run(opts).catch((e) => {
           console.error('FATAL EXCEPTION')
