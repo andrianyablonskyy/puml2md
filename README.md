@@ -20,7 +20,7 @@ You can easily add an embedded diagram to your markdown. Simply add a link to th
 
 Here's the result. **Try clicking on the yellow blocks.**
 
-<img alt="Diagram Image Link" src="./dist_puml/puml/level_1_system_view.svg" /><!--![Diagram Image Link](./puml/level_1_system_view.puml)-->
+<img class="puml-diagram" alt="Diagram Image Link" src="./dist_puml/puml/level_1_system_view.svg" /><!--![Diagram Image Link](./puml/level_1_system_view.puml)-->
 
 ### Link Only
 To render a link to a puml diagram, do the same thing but exclude the `!`
@@ -155,24 +155,24 @@ though.
 * Seems to be breaking on Windows, see [here](https://github.com/danielyaa5/puml-for-markdown/issues/6). I don't have a Windows machine to test on so help here would be appreciated.
 
 ### More Examples
-<img alt="ERD" src="./dist_puml/puml/level_4_erd.svg" /><!--![ERD](./puml/level_4_erd.puml)-->
+<img class="puml-diagram" alt="ERD" src="./dist_puml/puml/level_4_erd.svg" /><!--![ERD](./puml/level_4_erd.puml)-->
 
 
 
-<img alt="Container View" src="./dist_puml/puml/level_2_container_view.svg" /><!--![Container View](./puml/level_2_container_view.puml)-->
+<img class="puml-diagram" alt="Container View" src="./dist_puml/puml/level_2_container_view.svg" /><!--![Container View](./puml/level_2_container_view.puml)-->
 
 
 
-<img alt="Component View - Label Retrieval Job" src="./dist_puml/puml/level_3_component_view_label_retrieval_job.svg" /><!--![Component View - Label Retrieval Job](./puml/level_3_component_view_label_retrieval_job.puml)-->
+<img class="puml-diagram" alt="Component View - Label Retrieval Job" src="./dist_puml/puml/level_3_component_view_label_retrieval_job.svg" /><!--![Component View - Label Retrieval Job](./puml/level_3_component_view_label_retrieval_job.puml)-->
 
 
 
-<img alt="Component View - Pipeline Component" src="./dist_puml/puml/level_3_component_view_pipeline.svg" /><!--![Component View - Pipeline Component](./puml/level_3_component_view_pipeline.puml)-->
+<img class="puml-diagram" alt="Component View - Pipeline Component" src="./dist_puml/puml/level_3_component_view_pipeline.svg" /><!--![Component View - Pipeline Component](./puml/level_3_component_view_pipeline.puml)-->
 
 
 
-<img alt="Activity Diagram - Sampler A" src="./dist_puml/puml/level_4_activity_diagram_sampler_a.svg" /><!--![Activity Diagram - Sampler A](./puml/level_4_activity_diagram_sampler_a.puml)-->
+<img class="puml-diagram" alt="Activity Diagram - Sampler A" src="./dist_puml/puml/level_4_activity_diagram_sampler_a.svg" /><!--![Activity Diagram - Sampler A](./puml/level_4_activity_diagram_sampler_a.puml)-->
 
 
 
-<img alt="Activity Diagram - Sampler B" src="./dist_puml/puml/level_4_activity_diagram_sampler_b.svg" /><!--![Activity Diagram - Sampler B](./puml/level_4_activity_diagram_sampler_b.puml)-->
+<img class="puml-diagram" alt="Activity Diagram - Sampler B" src="./dist_puml/puml/level_4_activity_diagram_sampler_b.svg" /><!--![Activity Diagram - Sampler B](./puml/level_4_activity_diagram_sampler_b.puml)-->
