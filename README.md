@@ -30,7 +30,7 @@ To render a link to a puml diagram, do the same thing but exclude the `!`
 
 which renders into
 
-[Click to Open Interactive Diagram](Error)<!--[Click to Open Interactive Diagram](./puml/level_1_system_view.puml)-->
+[Click to Open Interactive Diagram](https://tinyurl.com/yuf2fass)<!--[Click to Open Interactive Diagram](./puml/level_1_system_view.puml)-->
 
 ## Goal
 The goal is to make PlantUML diagrams easily accessible from markdown, specifically GitHub flavored.

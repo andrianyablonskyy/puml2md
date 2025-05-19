@@ -19,8 +19,8 @@ const fs = require('fs'),
 // HELPERS
 const mkdirIfDoesntExist = (p) => !fs.existsSync(p) && fs.mkdirSync(p, { recursive: true }),
   getPumlUrl = ({ imgFormat, encodedData, shorten, pumlServerUrl }) =>
-    shorten ? tiny.shorten(getFullPumlUrl({ imgFormat, encodedData, pumlServerUrl })) : getFullPumlUrl({ imgFormat, encodedData, pumlServerUrl }),
-  getFullPumlUrl = ({ imgFormat, encodedData }) => `/${imgFormat}/${encodedData}}`,
+    shorten ? tiny.shorten(getFullPumlUrl({ pumlServerUrl, imgFormat, encodedData })) : getFullPumlUrl({ pumlServerUrl, imgFormat, encodedData }),
+  getFullPumlUrl = ({ pumlServerUrl, imgFormat, encodedData }) => `${pumlServerUrl}/${imgFormat}/${encodedData}`,
   mapUniqMatches = (s, re, mapper, match = re.exec(s), results = []) => {
     if (match){
       return mapUniqMatches(s, re, mapper, re.exec(s), results.concat([match]));
@@ -120,7 +120,7 @@ const downloadImg = async (serverUrl, imgUrl, outputPath) => {
       relFilePath = outputPath.replace(rootDirectory, '.');
 
     mkdirIfDoesntExist(path.dirname(outputPath));
-    const imgUrl = getFullPumlUrl({ imgFormat, encodedData });
+    const imgUrl = `/${imgFormat}/${encodedData}`;
     await downloadImg(pumlServerUrl, imgUrl, outputPath);
 
     return relFilePath;
